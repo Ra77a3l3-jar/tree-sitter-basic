@@ -1,0 +1,14 @@
+{
+  "grammars": [
+    {
+      "name": "basic",
+      "scope": "source.basic",
+      "file-types": ["bas"],
+      "content-regex": "^\\d+\\s+(PRINT|LET|REM|GOTO)"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "file-types": ["bas"]
+  }
+}
