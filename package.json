@@ -1,0 +1,47 @@
+{
+  "name": "tree-sitter-basic",
+  "version": "0.1.0",
+  "description": "Classic BASIC grammar for tree-sitter",
+  "repository": "https://github.com/Ra77a3l3-jar/tree-sitter-basic",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "basic",
+    "parsing"
+  ],
+  "author": "Raffaele Meo",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^8.0.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.24.0",
+    "prebuildify": "^6.0.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip",
+    "build": "tree-sitter generate && node-gyp configure && node-gyp build",
+    "test": "tree-sitter test"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.basic",
+      "path": "tree-sitter.json",
+      "file-types": [
+        "bas"
+      ]
+    }
+  ]
+}
