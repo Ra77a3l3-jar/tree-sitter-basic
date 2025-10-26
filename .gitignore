@@ -1,0 +1,12 @@
+node_modules/
+build/
+*.log
+.DS_Store
+target/
+Cargo.lock
+dist/
+*.pyc
+__pycache__/
+*.egg-info/
+.vscode/
+.idea/
