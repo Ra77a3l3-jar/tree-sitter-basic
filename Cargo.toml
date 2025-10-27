@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-basic"
+version = "0.1.0"
+description = "BASIC grammar for tree-sitter"
+authors = ["Raffaele Meo <Ra77a3l3-jar@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["tree-sitter", "parser", "basic"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/Ra77a3l3-jar/tree-sitter-basic"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = ["LICENSE", "bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.25.4"
