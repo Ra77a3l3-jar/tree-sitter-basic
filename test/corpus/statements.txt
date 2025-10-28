@@ -1,0 +1,79 @@
+==================
+Simple PRINT
+==================
+
+10 PRINT "HELLO"
+20 END
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (print_statement
+      (string)))
+  (line_number_statement
+    (number)
+    (end_statement)))
+
+==================
+LET assignment
+==================
+
+10 LET X = 5
+20 LET Y = X + 10
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (let_statement
+      (identifier)
+      (number)))
+  (line_number_statement
+    (number)
+    (let_statement
+      (identifier)
+      (binary_expression
+        (identifier)
+        (number)))))
+
+==================
+INPUT statement
+==================
+
+10 INPUT X
+20 INPUT "ENTER NAME"; N$
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (input_statement
+      (identifier)))
+  (line_number_statement
+    (number)
+    (input_statement
+      (string)
+      (identifier))))
+
+==================
+REM comment
+==================
+
+10 REM THIS IS A COMMENT
+20 PRINT "OK"
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (rem_statement
+      (comment_text)))
+  (line_number_statement
+    (number)
+    (print_statement
+      (string))))

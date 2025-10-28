@@ -1,0 +1,93 @@
+==================
+GOTO statement
+==================
+
+10 GOTO 30
+20 PRINT "SKIP"
+30 END
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (goto_statement
+      (number)))
+  (line_number_statement
+    (number)
+    (print_statement
+      (string)))
+  (line_number_statement
+    (number)
+    (end_statement)))
+
+==================
+IF THEN GOTO
+==================
+
+10 IF X > 5 THEN GOTO 30
+20 PRINT "SMALL"
+30 END
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (if_statement
+      (binary_expression
+        (identifier)
+        (number))
+      (goto_statement
+        (number))))
+  (line_number_statement
+    (number)
+    (print_statement
+      (string)))
+  (line_number_statement
+    (number)
+    (end_statement)))
+
+==================
+IF THEN statement
+==================
+
+10 IF A = 1 THEN PRINT "ONE"
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (if_statement
+      (binary_expression
+        (identifier)
+        (number))
+      (print_statement
+        (string)))))
+
+==================
+GOSUB and RETURN
+==================
+
+10 GOSUB 100
+20 END
+100 PRINT "SUB"
+110 RETURN
+
+---
+
+(source_file
+  (line_number_statement
+    (number)
+    (gosub_statement
+      (number)))
+  (line_number_statement
+    (number)
+    (end_statement))
+  (line_number_statement
+    (number)
+    (print_statement
+      (string)))
+  (line_number_statement
+    (number)))
